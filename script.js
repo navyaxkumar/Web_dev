@@ -76,3 +76,7 @@ function calc(){
 }
 
 calc()
+
+console.log("First line")
+setTimeout(()=>(console.log("After 2 seconds")),2000)
+console.log("Second line")
