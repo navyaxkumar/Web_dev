@@ -100,6 +100,10 @@ const name=document.querySelector("#name")
 const btn=document.querySelector(".btn")
 const list=document.querySelector(".list")
 btn.addEventListener('click',()=>{
+    if(name.value===""){
+        alert("Enter the name!")
+        return;
+    }
     const li=document.createElement('li')
     const dlt=document.createElement('button')
     dlt.innerText="Delete"
@@ -107,7 +111,8 @@ btn.addEventListener('click',()=>{
     dlt.addEventListener('click',()=>{
         list.removeChild(li)
     })
-    list.appendChild(dlt)
+    li.appendChild(dlt)
     list.appendChild(li)
     name.value=""
 })
+
