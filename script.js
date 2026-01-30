@@ -123,16 +123,34 @@
 // },2000)
 // /console.log("Second line")
 
-function print(num){
-    setTimeout(()=>{
-        console.log("inside print")
-        num()
-    },2000)
+// function print(num){
+//     setTimeout(()=>{ //higher order function
+//         console.log("inside print")
+//         num()
+//     },2000)
    
     
-}
+// }
 
-function sample(){  //callback function
-    console.log("inside callback")
-}
-print(sample)
+// function sample(){  //callback function
+//     console.log("inside callback")
+// }
+// print(sample)
+
+
+
+console.log("Starting homework....");//callback hell
+
+setTimeout(()=>{
+    console.log("Homework done....");
+    console.log("Starting dinner....");
+
+    setTimeout(()=> {
+        console.log("Dinner done....");
+        console.log("Getting ready to go out....");
+
+        setTimeout (()=> {
+            console.log("Going to the playground....");
+        },1000);
+    }, 1500);
+},2000);
