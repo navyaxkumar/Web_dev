@@ -157,21 +157,19 @@
 
 
 
-const p=new Promise((resolve,reject) => {
-    let done=true;
-    setTimeout(()=>{
-        if(done){
-            resolve({name:"Anand",age:23})
-        }else{
-            reject("Work has not been completed")
-        }
-    },5000)
-})
+// 
 
-p.then((data)=>{
-    console.log(data.name)
-}).catch((err)=>{
-    console.log(err)
-}).finally(()=>{
-    console.log("Finally block")
-})
+function doHomework(){
+    const p=new Promise((resolve,reject)=>{
+        let done=true;
+        setTimeout(()=>{
+            if(done){
+                console.log("Homework completed")
+                resolve("Homework is done")
+            }else{
+                reject("Honework not completed")
+            }
+        },2000)
+    })
+    return p
+}
