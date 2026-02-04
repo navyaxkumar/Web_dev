@@ -121,36 +121,57 @@
 //     console.log("After 2 seconds")
 // console.log("second line")
 // },2000)
-// /console.log("Second line")
+// // /console.log("Second line")
 
-// function print(num){
-//     setTimeout(()=>{ //higher order function
-//         console.log("inside print")
-//         num()
-//     },2000)
+// // function print(num){
+// //     setTimeout(()=>{ //higher order function
+// //         console.log("inside print")
+// //         num()
+// //     },2000)
    
     
-// }
+// // }
 
-// function sample(){  //callback function
-//     console.log("inside callback")
-// }
-// print(sample)
+// // function sample(){  //callback function
+// //     console.log("inside callback")
+// // }
+// // print(sample)
 
 
 
-console.log("Starting homework....");//callback hell
+// console.log("Starting homework....");//callback hell
 
-setTimeout(()=>{
-    console.log("Homework done....");
-    console.log("Starting dinner....");
+// setTimeout(()=>{
+//     console.log("Homework done....");
+//     console.log("Starting dinner....");
 
-    setTimeout(()=> {
-        console.log("Dinner done....");
-        console.log("Getting ready to go out....");
+//     setTimeout(()=> {
+//         console.log("Dinner done....");
+//         console.log("Getting ready to go out....");
 
-        setTimeout (()=> {
-            console.log("Going to the playground....");
-        },1000);
-    }, 1500);
-},2000);
+//         setTimeout (()=> {
+//             console.log("Going to the playground....");
+//         },1000);
+//     }, 1500);
+// },2000);
+
+
+
+const p=new Promise((resolve,reject) => {
+    let done=true;
+    setTimeout(()=>{
+        if(done){
+            resolve({name:"Anand",age:23})
+        }else{
+            reject("Work has not been completed")
+        }
+    },5000)
+})
+
+p.then((data)=>{
+    console.log(data.name)
+}).catch((err)=>{
+    console.log(err)
+}).finally(()=>{
+    console.log("Finally block")
+})
