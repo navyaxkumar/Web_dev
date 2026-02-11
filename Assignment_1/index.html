@@ -3,21 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
+        <h1>🎯Smart Event Dashboard</h1>
 
         <div class="eventform">
             <h3> Add New Event</h3>
             <form id="form">
                 <label for="event_title">Event Title</label>
-                <input type="text" id="event_title"><br>
+                <input type="text" id="event_title" required><br>
                 <label for="event_date">Event Date</label>
-                <input type="date" id="event_date"><br>
+                <input type="date" id="event_date" required><br>
                 <label for="category">Category</label>
                 <select id="category">
                     <option value="Conference">Conference</option>
@@ -26,20 +27,28 @@
                     <option value="Webinar">Webinar</option>
                     <option value="Social">Social</option>
                 </select><br>
+
+
                 <label for="description">Description</label>
                 <textarea id="description"></textarea><br>
                 <button type="submit">Add Event</button>
             </form>
         </div>
+
+
+
         <div class="events">
             <h3>My Events</h3>
-            <button>Clear All Events</button>
-            <button>Add Sample Events</button>
-            <div class="cards"></div>
+            <button id="clearbtn">Clear All Events</button>
+            <button id="samplebtn">Add Sample Events</button>
+            
         </div>
-        <div class="cards"></div>
+    
+        <div class="cards" id="cards"></div>
+
         <div class="dom">
-            You pressed:<div id="key">none</div>
+            <h3>DOM Manipulation Demo</h3>
+            <p>You pressed:<span id="key">none</span></p>
         </div>
     </div>
 

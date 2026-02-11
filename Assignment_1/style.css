@@ -1,5 +1,22 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .cards{
-    background-color: aqua;
     width: 50%;
     position: relative;
 }
