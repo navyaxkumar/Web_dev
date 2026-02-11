@@ -28,3 +28,7 @@ form.addEventListener('submit',function(event){
         eventCards.appendChild(card)
 })
 
+document.addEventListener('keydown',(event)=>{
+    let pressed=event.key;
+    document.querySelector(".dom").textContent=`You pressed: ${pressed}`
+})
