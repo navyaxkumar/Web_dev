@@ -1,37 +1,175 @@
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    padding: 30px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
-.title {
-    text-align: center;
-    color: white;
-    margin-bottom: 30px;
+body {    
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px; 
+    background: #b4cce7;
+    padding: 40px 20px;
 }
 
 .container {
+    width: 100%;
+    max-width: 1300px;
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
-.cards{
-    width: 50%;
+
+h1 {
+    text-align: center;
+    color: #1d365a;
+    margin-bottom: 40px;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.top-section {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    height: 750px;
+}
+
+.eventform,
+.events,
+.dom,
+.card {
+    background: #e9ebef;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #9fb0d3;
+}
+
+.eventform {
+    flex: 1;
+}
+
+h3 {
+    color: #3b485d;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 650;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 20px;
+    color: #374151;
+    font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 16px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 5px rgba(74, 143, 184, 0.3);
+    background: #f5f7fa;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+form textarea {
+    height: 60px;
+
+}
+
+.eventform {
+    width: 500px;
+}
+
+.events {
+    width: 700px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #708dcd;
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.events button {
+    margin: 10px;
+}
+
+.cards {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card {
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
     position: relative;
 }
-.deleteCard{
+
+.deleteCard {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: red;
-    color: aliceblue;
-    width: 15px;
-    height: 15px;
+    top: 8px;
+    right: 8px;
+    background-color: #ef4444;
+    color: white;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+}
+
+.card h4 {
+    font-size: 20px;
+    margin: 8px;
+}
+
+.card p {
+    font-size: 14px;
+    margin: 5px;
+}
+
+.dom {
+    width: 1250px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.dom span {
+    font-weight: bold;
+    color:#2563eb;
+    font-size: 20px;
 }
