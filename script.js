@@ -1,242 +1,260 @@
-// // // const para=document.querySelector("p")
-// // // para.innerText="Hello Shubham"
-// // // para.style.backgroundColor="Black"
-// // // para.style.color="White"
+// // // // const para=document.querySelector("p")
+// // // // para.innerText="Hello Shubham"
+// // // // para.style.backgroundColor="Black"
+// // // // para.style.color="White"
 
-// // // Selecting elements by class name
+// // // // Selecting elements by class name
 
-// // // const paras=document.getElementsByClassName("para")
-// // // paras[0].innerText="Hello!"
-// // // paras[0].innerHTML="<h1 style='color:red; background-color:Thistle;'>WOOWWWW</h1>"
-// // // paras[1].style.color='Blue'
-// // // Returns an array of elements if there are multiple.
+// // // // const paras=document.getElementsByClassName("para")
+// // // // paras[0].innerText="Hello!"
+// // // // paras[0].innerHTML="<h1 style='color:red; background-color:Thistle;'>WOOWWWW</h1>"
+// // // // paras[1].style.color='Blue'
+// // // // Returns an array of elements if there are multiple.
 
-// // // Selecting elements by id
+// // // // Selecting elements by id
 
-// // // const para=document.getElementById("heading")
-// // // para.innerText="MAIN SHUBHAM HUN"
-// // // para.innerHTML="<p id='heading' style='color:Blue;background-color:Thistle;'>MAIN SHUBHAM HUN</p> " 
-
-
-// // // Returns a new array
-// // // let arr=[1, 2, 3, 4, 5, 6 ,7]
-// // // const newarr=arr.map((arr)=>2*arr)
-// // // console.log(newarr)    OUTPUT=> Array(7) [ 2, 4, 6, 8, 10, 12, 14 ]
+// // // // const para=document.getElementById("heading")
+// // // // para.innerText="MAIN SHUBHAM HUN"
+// // // // para.innerHTML="<p id='heading' style='color:Blue;background-color:Thistle;'>MAIN SHUBHAM HUN</p> " 
 
 
-// // // Doesn't return a new array
-// // // let arr=[1,2,3,4,5,6,7]
-// // // arr.forEach((ele)=>console.log(arr+=2))
-
-// // // Difference in .textContent and .innerText
-
-// // // .textContent applies changes to the hidden elements also (display:none or visibility:hidden).
-// // // .innerText doesn't apply changes to hidden elements.
-
-// // // const container=document.querySelector(".container")
-// // // const button=document.querySelector("button")
-// // // container.addEventListener("click",()=>{
-// // //     console.log("Container clicked")
-// // // })
-
-// // // button.addEventListener("click",()=>{
-// // //     console.log("Button clicked")
-// // // })
-
-// // // console.log(a) ERROR: ReferenceError: Cannot access 'a' before initialization
-// // // console.log(b) Undefined
-
-// // // let a = 239
-// // // var b = 2595
-
-// // // function hello(){
-// // //     console.log("Hello World")
-// // // }
-
-// // // hello()
+// // // // Returns a new array
+// // // // let arr=[1, 2, 3, 4, 5, 6 ,7]
+// // // // const newarr=arr.map((arr)=>2*arr)
+// // // // console.log(newarr)    OUTPUT=> Array(7) [ 2, 4, 6, 8, 10, 12, 14 ]
 
 
+// // // // Doesn't return a new array
+// // // // let arr=[1,2,3,4,5,6,7]
+// // // // arr.forEach((ele)=>console.log(arr+=2))
 
-// // // function first() {
-// // //     second()
-// // // }
-// // // function second() {
-// // //     third()
-// // // }
-// // // function third() {
-// // //     console.trace()
-// // // }
-// // // first()
-// // // // 
-// // // let val=40
+// // // // Difference in .textContent and .innerText
 
-// // // function calc(){
-// // //     console.log(val)
-// // //     let val=100
-// // // }
+// // // // .textContent applies changes to the hidden elements also (display:none or visibility:hidden).
+// // // // .innerText doesn't apply changes to hidden elements.
 
-// // // calc()
+// // // // const container=document.querySelector(".container")
+// // // // const button=document.querySelector("button")
+// // // // container.addEventListener("click",()=>{
+// // // //     console.log("Container clicked")
+// // // // })
 
-// // // console.log("First line")
-// // // setTimeout(()=>{console.log("After 2 seconds")},2000)
-// // // console.log("Second line")
+// // // // button.addEventListener("click",()=>{
+// // // //     console.log("Button clicked")
+// // // // })
 
-// // // setTimeout(()=>{alert("line after 2 seconds")},2000)
+// // // // console.log(a) ERROR: ReferenceError: Cannot access 'a' before initialization
+// // // // console.log(b) Undefined
 
-// // // const timerID=setInterval(()=>{console.log("setInterval")},1000)
+// // // // let a = 239
+// // // // var b = 2595
 
-// // // const setTimeout(()=>{clearInterval(timerID)},10000)
+// // // // function hello(){
+// // // //     console.log("Hello World")
+// // // // }
 
-// // let a=1
-// // const timerID=setInterval(()=>{console.log(a);a=a+1},1000)
+// // // // hello()
 
 
-// // const timeid=setTimeout(()=>{clearInterval(timerID)},10000)
 
-// // // clearTimeout(timeroutID)
+// // // // function first() {
+// // // //     second()
+// // // // }
+// // // // function second() {
+// // // //     third()
+// // // // }
+// // // // function third() {
+// // // //     console.trace()
+// // // // }
+// // // // first()
+// // // // // 
+// // // // let val=40
+
+// // // // function calc(){
+// // // //     console.log(val)
+// // // //     let val=100
+// // // // }
+
+// // // // calc()
+
+// // // // console.log("First line")
+// // // // setTimeout(()=>{console.log("After 2 seconds")},2000)
+// // // // console.log("Second line")
+
+// // // // setTimeout(()=>{alert("line after 2 seconds")},2000)
+
+// // // // const timerID=setInterval(()=>{console.log("setInterval")},1000)
+
+// // // // const setTimeout(()=>{clearInterval(timerID)},10000)
+
+// // // let a=1
+// // // const timerID=setInterval(()=>{console.log(a);a=a+1},1000)
 
 
-// const name=document.querySelector("#name")
-// const btn=document.querySelector(".btn")
-// const list=document.querySelector(".list")
-// btn.addEventListener('click',()=>{
-//     if(name.value===""){
-//         alert("Enter the name!")
-//         return;
-//     }
-//     const li=document.createElement('li')
-//     const dlt=document.createElement('button')
-//     dlt.innerText="Delete"
-//     li.innerText=name.value;
-//     dlt.addEventListener('click',()=>{
-//         list.removeChild(li)
-//     })
-//     li.appendChild(dlt)
-//     list.appendChild(li)
-//     name.value=""
-// })
+// // // const timeid=setTimeout(()=>{clearInterval(timerID)},10000)
 
-// console.log("First line")
-// setTimeout(()=>{
-//     console.log("After 2 seconds")
-// console.log("second line")
-// },2000)
-// // /console.log("Second line")
+// // // // clearTimeout(timeroutID)
 
-// // function print(num){
-// //     setTimeout(()=>{ //higher order function
-// //         console.log("inside print")
-// //         num()
-// //     },2000)
+
+// // const name=document.querySelector("#name")
+// // const btn=document.querySelector(".btn")
+// // const list=document.querySelector(".list")
+// // btn.addEventListener('click',()=>{
+// //     if(name.value===""){
+// //         alert("Enter the name!")
+// //         return;
+// //     }
+// //     const li=document.createElement('li')
+// //     const dlt=document.createElement('button')
+// //     dlt.innerText="Delete"
+// //     li.innerText=name.value;
+// //     dlt.addEventListener('click',()=>{
+// //         list.removeChild(li)
+// //     })
+// //     li.appendChild(dlt)
+// //     list.appendChild(li)
+// //     name.value=""
+// // })
+
+// // console.log("First line")
+// // setTimeout(()=>{
+// //     console.log("After 2 seconds")
+// // console.log("second line")
+// // },2000)
+// // // /console.log("Second line")
+
+// // // function print(num){
+// // //     setTimeout(()=>{ //higher order function
+// // //         console.log("inside print")
+// // //         num()
+// // //     },2000)
    
     
+// // // }
+
+// // // function sample(){  //callback function
+// // //     console.log("inside callback")
+// // // }
+// // // print(sample)
+
+
+
+// // console.log("Starting homework....");//callback hell
+
+// // setTimeout(()=>{
+// //     console.log("Homework done....");
+// //     console.log("Starting dinner....");
+
+// //     setTimeout(()=> {
+// //         console.log("Dinner done....");
+// //         console.log("Getting ready to go out....");
+
+// //         setTimeout (()=> {
+// //             console.log("Going to the playground....");
+// //         },1000);
+// //     }, 1500);
+// // },2000);
+
+
+
+// // 
+
+// // function doHomework(){
+// //     const p=new Promise((resolve,reject)=>{
+// //         let done=true;
+// //         setTimeout(()=>{
+// //             if(done){
+// //                 console.log("Homework completed")
+// //                 resolve("Homework is done")
+// //             }else{
+// //                 reject("Homework not completed")
+// //             }
+// //         },2000)
+// //     })
+// //     return p
 // // }
 
-// // function sample(){  //callback function
-// //     console.log("inside callback")
+// // function eatDinner(){
+// //     const p=new Promise((resolve,reject)=>{
+// //         let done=true;
+// //         setTimeout(()=>{
+// //             if(done){
+// //                 console.log("Dinner completed")
+// //                 resolve("Dinner is done")
+// //             }else{
+// //                 reject("Dinner not completed")
+// //             }
+// //         },2000)
+// //     })
+// //     return p
 // // }
-// // print(sample)
+
+
+// // function gotoPlayground(){
+// //     const p=new Promise((resolve,reject)=>{
+// //         let done=true;
+// //         setTimeout(()=>{
+// //             if(done){
+// //                 console.log("Went to the playground")
+// //                 resolve("Playground time")
+// //             }else{
+// //                 reject("Not allowed to go")
+// //             }
+// //         },2000)
+// //     })
+// //     return p
+// // }
+
+
+// // doHomework().then((data)=>{
+// //     console.log(data)
+// //     return eatDinner()
+// // }).then((data)=>{
+// //     console.log(data)
+// //     return gotoPlayground()    
+// // }).then((data)=>{
+// //     console.log(data)
+// // }).catch((error)=>{
+// //     console.log(error)
+// // }).finally(()=>{
+// //     console.log("Go to sleep")
+// // })
 
 
 
-// console.log("Starting homework....");//callback hell
-
-// setTimeout(()=>{
-//     console.log("Homework done....");
-//     console.log("Starting dinner....");
-
-//     setTimeout(()=> {
-//         console.log("Dinner done....");
-//         console.log("Getting ready to go out....");
-
-//         setTimeout (()=> {
-//             console.log("Going to the playground....");
-//         },1000);
-//     }, 1500);
-// },2000);
-
-
-
-// 
-
-// function doHomework(){
-//     const p=new Promise((resolve,reject)=>{
-//         let done=true;
+// function prepareFood(){
+//     return new Promise((res,rej)=>{
 //         setTimeout(()=>{
-//             if(done){
-//                 console.log("Homework completed")
-//                 resolve("Homework is done")
-//             }else{
-//                 reject("Homework not completed")
-//             }
+//             console.log("FOod delivered")
+//             res()
 //         },2000)
 //     })
-//     return p
-// }
-
-// function eatDinner(){
-//     const p=new Promise((resolve,reject)=>{
-//         let done=true;
-//         setTimeout(()=>{
-//             if(done){
-//                 console.log("Dinner completed")
-//                 resolve("Dinner is done")
-//             }else{
-//                 reject("Dinner not completed")
-//             }
-//         },2000)
-//     })
-//     return p
 // }
 
 
-// function gotoPlayground(){
-//     const p=new Promise((resolve,reject)=>{
-//         let done=true;
-//         setTimeout(()=>{
-//             if(done){
-//                 console.log("Went to the playground")
-//                 resolve("Playground time")
-//             }else{
-//                 reject("Not allowed to go")
-//             }
-//         },2000)
-//     })
-//     return p
+// async function foodOrder(){
+//     const data=await orderFood()
+//     console.log(data)
+//     await prepareFood()
+//     await deliverFood()
 // }
 
-
-// doHomework().then((data)=>{
-//     console.log(data)
-//     return eatDinner()
-// }).then((data)=>{
-//     console.log(data)
-//     return gotoPlayground()    
-// }).then((data)=>{
-//     console.log(data)
-// }).catch((error)=>{
-//     console.log(error)
-// }).finally(()=>{
-//     console.log("Go to sleep")
-// })
+// foodOrder()
 
 
 
-function prepareFood(){
-    return new Promise((res,rej)=>{
-        setTimeout(()=>{
-            console.log("FOod delivered")
-            res()
-        },2000)
-    })
+console.log("First line")
+try{
+    // let sample=12313
+    // console.log(sample)
+    // console.log("Line after sample")
+    let age=16
+    if(age<18){
+        throw new Error("You are minor")
+    }
+}catch(err) {
+    console.error(err)// console.error for red
+    //console.warn for yellow
+    console.log("Error!")
 }
-
-
-async function foodOrder(){
-    const data=await orderFood()
-    console.log(data)
-    await prepareFood()
-    await deliverFood()
-}
-
-foodOrder()
+console.log("Second line")
