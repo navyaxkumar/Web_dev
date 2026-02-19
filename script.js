@@ -242,7 +242,7 @@
 // console.log("Second line")
 
 // async function getData() {
-//   try{ 
+//   try{
 //     const response = await fetch("https://dummyjson.com/products/200")
 //   if (response.ok==false){
 //     throw new Error("Something went wrong");
@@ -259,32 +259,52 @@
 // }
 // getData();
 
+// async function getData(){
+//     try{
+//         // Using POST method to add a new product
+//         const resp=await fetch("https://dummyjson.com/products/add", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 title: "Macbook M5",
+//                 price: 100000,
+//                 description: "Latest Macbook with M5 chip",
+//                 category: "laptops",
+//                 thumbnail: "https://example.com/macbook-m5.jpg"
+//             })
+//         });
+//         if (resp.ok===false) {
+//             throw new Error("Error");
+//         }
+//         console.log(resp)
+//         const data=await resp.json();
+//         console.log("Product Added:", data);
+//     }catch(err){
+//         console.log("Error:", err);
+//     }
+// }
 
-async function getData(){
-    try{
-        // Using POST method to add a new product
-        const resp=await fetch("https://dummyjson.com/products/add", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                title: "Macbook M5",
-                price: 100000,
-                description: "Latest Macbook with M5 chip",
-                category: "laptops",
-                thumbnail: "https://example.com/macbook-m5.jpg"
-            })
-        });
-        if (resp.ok===false) {
-            throw new Error("Error");
-        }
-        console.log(resp)
-        const data=await resp.json();
-        console.log("Product Added:", data);
-    }catch(err){
-        console.log("Error:", err);
-    }
+// getData()
+
+// localStorage.setItem("name","Shubham")
+// localStorage.setItem("age",23)
+
+// const name=localStorage.getItem("name")
+// console.log(name)
+// console.log(localStorage.getItem("age"))
+
+// localStorage.removeItem("name")
+// localStorage.clear()
+
+// 
+
+document.cookie="name=Shubham; expires=Thu, 20 Feb 2026 23:59:59 UTC; "
+document.cookie="age=23; expires=Thu, 20 Feb 2026 23:59:59 UTC; "
+
+console.log(document.cookie)    
+async function fetchData("http://127.0.0.1:5502/javascript/index.html") {
+    await fetch()
 }
-
-getData()
+fetchData()
