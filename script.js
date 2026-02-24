@@ -291,20 +291,21 @@
 // localStorage.setItem("name","Shubham")
 // localStorage.setItem("age",23)
 
-// const name=localStorage.getItem("name")
-// console.log(name)
-// console.log(localStorage.getItem("age"))
+// sessionStorage.setItem("name","Devendra")
+// sessionStorage.setItem("age",23)
 
-// localStorage.removeItem("name")
-// localStorage.clear()
+// const uname=sessionStorage.getItem("name")
+// console.log(uname)
+// console.log(sessionStorage.getItem("age"))
 
-// 
+// sessionStorage.removeItem("name")
 
-document.cookie="name=Shubham; expires=Thu, 20 Feb 2026 23:59:59 UTC; "
-document.cookie="age=23; expires=Thu, 20 Feb 2026 23:59:59 UTC; "
 
-console.log(document.cookie)    
-async function fetchData("http://127.0.0.1:5502/javascript/index.html") {
-    await fetch()
-}
-fetchData()
+// document.cookie="name=Devendra; expires=Thu, 20 Feb 2026 12:00:00 UTC;"
+// document.cookie="age=25; expires=Thu, 20 Feb 2026 12:00:00 UTC;"
+// console.log(document.cookie)
+
+// async function fetchData(){
+//     await fetch("http://127.0.0.1:5502/javascript/index.html")
+// }
+// fetchData()
