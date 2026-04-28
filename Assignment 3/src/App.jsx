@@ -5,7 +5,6 @@ import AddStudentForm from "./components/AddStudentForm";
 import StudentRow from './components/StudentRow';
 import "./App.css";
 
-// Initial dummy students to show on first load
 const initialStudents = [
   { id: 1, name: "Aarav Sharma", score: 78 },
   { id: 2, name: "Priya Mehta", score: 35 },
@@ -15,20 +14,16 @@ const initialStudents = [
 ];
 
 function App() {
-  // useState stores all students — when this changes, React re-renders the UI
   const [students, setStudents] = useState(initialStudents);
-
-  // Called from AddStudentForm when user submits a new student
   const addStudent = (name, score) => {
     const newStudent = {
-      id: Date.now(), // unique id using timestamp
+      id: Date.now(), 
       name: name,
       score: Number(score),
     };
-    setStudents([...students, newStudent]); // add to existing list
+    setStudents([...students, newStudent]); 
   };
 
-  // Called from StudentRow when user updates a score
   const updateScore = (id, newScore) => {
     setStudents(
       students.map((student) =>
@@ -39,13 +34,9 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* Header component — just shows the title */}
       <Header />
 
-      {/* Form to add new students */}
-      <AddStudentForm onAdd={addStudent} />
-
-      {/* Table showing all students */}
+      <AddStudentForm onAdd={addStudent} />\
       <StudentTable students={students} onUpdateScore={updateScore} />
     </div>
   );

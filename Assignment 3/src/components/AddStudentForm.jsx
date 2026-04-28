@@ -21,15 +21,15 @@ function AddStudentForm({ onAdd }) {
       <form onSubmit={handleSubmit} className="add-form">
         <div className="form-group">
           <label>Student Name</label>
-          <input type="text" placeholder="e.g. Riya Patel" value={name}
+          <input type="text" placeholder="Name" value={name}
             onChange={(e) => setName(e.target.value)} className="form-input" />
         </div>
         <div className="form-group">
           <label>Score (0–100)</label>
-          <input type="number" placeholder="e.g. 75" min="0" max="100"
+          <input type="text" placeholder="Score" min="0" max="100"
             value={score} onChange={(e) => setScore(e.target.value)} className="form-input" />
         </div>
-        <button type="submit" className="btn btn-add">+ Add Student</button>
+        <button type="submit" className="btn btn-add">Add Student</button>
       </form>
     </div>
   );

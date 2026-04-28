@@ -20,12 +20,12 @@ function StudentRow({ index, student, onUpdateScore }) {
       <td className="score-cell">{student.score}</td>
       <td>
         <span className={isPassed ? "status pass" : "status fail"}>
-          {isPassed ? "✅ Pass" : "❌ Fail"}
+          {isPassed ? "Pass" : "Fail"}
         </span>
       </td>
       <td className="update-cell">
         <input
-          type="number"
+          type="text"
           min="0"
           max="100"
           value={inputScore}
