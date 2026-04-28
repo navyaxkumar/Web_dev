@@ -36,7 +36,7 @@ function App() {
     <div className="app-container">
       <Header />
 
-      <AddStudentForm onAdd={addStudent} />\
+      <AddStudentForm onAdd={addStudent} />
       <StudentTable students={students} onUpdateScore={updateScore} />
     </div>
   );
