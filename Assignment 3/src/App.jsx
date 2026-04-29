@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import StudentTable from "./components/StudentTable";
 import AddStudentForm from "./components/AddStudentForm";
+import StudentTable from "./components/StudentTable";
 import StudentRow from './components/StudentRow';
 import "./App.css";
 

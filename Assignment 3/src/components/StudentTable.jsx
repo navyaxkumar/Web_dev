@@ -1,10 +1,13 @@
 import StudentRow from "./StudentRow";
 
 function StudentTable({ students, onUpdateScore }) {
+  const isEmpty = students.length === 0;
+
   return (
     <div className="table-wrapper">
       <h2>Student List ({students.length} students)</h2>
-      {students.length === 0 ? (
+
+      {isEmpty ? (
         <p className="empty-msg">No students added yet. Use the form above!</p>
       ) : (
         <table className="student-table">
