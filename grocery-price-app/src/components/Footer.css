@@ -1,0 +1,9 @@
+.footer {
+  margin-top: auto;
+  padding: 24px 20px;
+  color: black;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid grey;
+  background: rgba(90, 193, 0, 0.216);
+}

@@ -1,0 +1,56 @@
+.savings-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 22px 0 28px;
+}
+
+.savings-card {
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.savings-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.savings-value {
+  color: var(--primary-dark);
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.empty-state {
+  margin-top: 22px;
+}
+
+.empty-state p {
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+
+.remove-btn {
+  width: 34px;
+  padding: 0;
+  color: var(--danger);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.remove-btn:hover {
+  background: var(--danger);
+  color: white;
+}
+
+@media (max-width: 760px) {
+  .savings-summary {
+    grid-template-columns: 1fr;
+  }
+}
