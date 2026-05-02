@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
@@ -13,10 +13,11 @@ function SearchPage() {
   const savedItems = useSelector(state => state.products.savedItems)
 
   const [searchQuery, setSearchQuery] = useState('')
-  const [products, setProducts] = useState([])
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || '')
-  const [sortBy, setSortBy] = useState('relevance')
-  const [loading, setLoading] = useState(true)
+const [products, setProducts] = useState([])
+const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || '')
+const [sortBy, setSortBy] = useState('relevance')
+const [loading, setLoading] = useState(true)
+const debounceTimer = useRef(null)
 
   const categories = getCategories()
 
@@ -38,28 +39,51 @@ function SearchPage() {
   }, [selectedCategory])
 
   const handleSearch = async (e) => {
-    e.preventDefault()
-    if (!searchQuery.trim()) return
+  e.preventDefault()
+  if (!searchQuery.trim()) return
 
+  setLoading(true)
+  try {
+    const results = await searchProductsAPI(searchQuery, 1)
+    setProducts(results)
+  } catch (error) {
+    console.error('Search error:', error)
+    const fallback = getFallbackProducts().filter(p =>
+      p.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    setProducts(fallback)
+  } finally {
+    setLoading(false)
+  }
+}
+
+const handleSearchInputChange = (e) => {
+  const value = e.target.value
+  setSearchQuery(value)
+
+  if (debounceTimer.current) clearTimeout(debounceTimer.current)
+
+  debounceTimer.current = setTimeout(async () => {
+    if (!value.trim()) return
     setLoading(true)
     try {
-      const results = await searchProductsAPI(searchQuery, 1)
+      const results = await searchProductsAPI(value, 1)
       setProducts(results)
     } catch (error) {
-      console.error('Search error:', error)
       const fallback = getFallbackProducts().filter(p =>
-        p.name.toLowerCase().includes(searchQuery.toLowerCase())
+        p.name.toLowerCase().includes(value.toLowerCase())
       )
       setProducts(fallback)
     } finally {
       setLoading(false)
     }
-  }
+  }, 500)
+}
 
-  const getLowestPrice = (product) => {
-    const allPrices = product.prices.map(storeItem => storeItem.price)
-    return Math.min(...allPrices)
-  }
+  const getLowestPrice = useCallback((product) => {
+  const allPrices = product.prices.map(storeItem => storeItem.price)
+  return Math.min(...allPrices)
+}, [])
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category)
@@ -80,32 +104,21 @@ function SearchPage() {
     toast.success('Item saved')
   }
 
-  const sortProducts = () => {
-    const copiedProducts = [...products]
+  const sortedProducts = useMemo(() => {
+  const copiedProducts = [...products]
 
-    copiedProducts.sort((a, b) => {
-      const firstPrice = getLowestPrice(a)
-      const secondPrice = getLowestPrice(b)
+  copiedProducts.sort((a, b) => {
+    const firstPrice = getLowestPrice(a)
+    const secondPrice = getLowestPrice(b)
 
-      if (sortBy === 'price-low') {
-        return firstPrice - secondPrice
-      }
+    if (sortBy === 'price-low') return firstPrice - secondPrice
+    if (sortBy === 'price-high') return secondPrice - firstPrice
+    if (sortBy === 'name') return a.name.localeCompare(b.name)
+    return 0
+  })
 
-      if (sortBy === 'price-high') {
-        return secondPrice - firstPrice
-      }
-
-      if (sortBy === 'name') {
-        return a.name.localeCompare(b.name)
-      }
-
-      return 0
-    })
-
-    return copiedProducts
-  }
-
-  const sortedProducts = sortProducts()
+  return copiedProducts
+}, [products, sortBy, getLowestPrice])
 
   return (
     <div className="search-page">
@@ -115,12 +128,12 @@ function SearchPage() {
 
         <form className="search-form" onSubmit={handleSearch}>
           <input
-            type="text"
-            placeholder="Search for milk, bread, apples..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-input"
-          />
+  type="text"
+  placeholder="Search for milk, bread, apples..."
+  value={searchQuery}
+  onChange={handleSearchInputChange}
+  className="search-input"
+/>
           <button type="submit" className="search-btn">Search</button>
         </form>
       </section>

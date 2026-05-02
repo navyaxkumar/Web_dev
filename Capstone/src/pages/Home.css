@@ -6,7 +6,7 @@
   min-height: 420px;
   display: flex;
   align-items: center;
-  background: white;
+  background: var(--surface);
 
   color:darkgreen;
   padding: 72px 40px;
